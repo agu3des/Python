@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akari</title>
+    <link href="style/main.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="flex justify-between navbar pl-4 pt-2 pb-2 dark:bg-gray-800">
+        <div>
+          <h1
+            class="text-black text-3xl font-bold duration-75 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white"
+            id="#home">AKARI</h1>
+        </div>
+        <div>
+          <div> <button
+              class="button text-black text-2xl bg-white-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:text-white dark:hover:bg-gray-800 focus:outline-none"
+              type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+              aria-controls="drawer-navigation">
+              Menu
+              </button>
+          </div>
+    
+          <!-- drawer component -->
+            <div id="drawer-navigation"
+            class="font fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full menu dark:bg-gray-800"
+            tabindex="-1" aria-labelledby="drawer-navigation-label">
+                <h5 id="drawer-navigation-label" class="text-2xl font-bold text-black uppercase dark:text-white">AKARI
+                </h5>
+                <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+                class="text-pink-400 bg-black hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                <span class="sr-only">Close menu</span>
+                </button>
+                <div class="py-4 overflow-y-auto">
+                <ul class="space-y-2 font-medium">
+                    <li>
+                    <a href="#home"
+                        class="flex items-center p-2 text-white dark:text-pink hover:bg-gray-100 hover:text-black dark:hover:bg-gray-700 menuElement">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Home</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="login.html"
+                        class="flex items-center p-2 text-white dark:text-pink hover:bg-gray-100 hover:text-black dark:hover:bg-gray-700 menuElement">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Login</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="produtos"
+                        class="flex items-center p-2 text-white dark:text-pink hover:bg-gray-100 hover:text-black dark:hover:bg-gray-700 menuElement">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Produtos</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="carrinho"
+                        class="flex items-center p-2 text-white dark:text-pink hover:bg-gray-100 hover:text-black dark:hover:bg-gray-700 menuElement">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Carrinho</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#historia"
+                        class="flex items-center p-2 text-white dark:text-pink hover:bg-gray-100 hover:text-black dark:hover:bg-gray-700 menuElement">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Nossa História</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#sobre"
+                        class="flex items-center p-2 text-white dark:text-pink hover:bg-gray-100 hover:text-black dark:hover:bg-gray-700 menuElement">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Sobre</span>
+                    </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
