@@ -1,20 +1,33 @@
-<h1 align="center">AKARI</h1>
+<h1 align="center">Python</h1>
 
-`"E-Commerce"` - Aplicação que simula um sistema de uma loja. 
-
-## Projeto
-The project it's not finished!
-[Figma](https://www.figma.com/file/zciluhXWgiHlxJsUPjmNhr/AKARI?type=design&node-id=150%3A100&mode=design&t=4FeSZU3JDse5l7WW-1)
-[Replit](https://replit.com/@agu3des/AKARI?v=1)
+## Ferramentas
+`Python3`
+`NumPy`
+`Jupyter Notebook`
 
 
 ## Uso
 > Este projeto está sendo desenvolvido para a prática das seguintes habilidades:
-`JavaScript`
-`Regex`
-`React`
-`Supabase`
-`NodeJS`
+1. Introdution
+2. String
+3. If, Elif and Else
+4. For and While
+5. Vetor
+6. Matriz
+7. Function
+8. PyOO
+9. Operational Systems
+10. Criptografia
+11. Automações
+        
+      
+
+
+
+
+
+
+
 
 ### Developer
 - [Ananda Guedes](https://github.com/agu3des)
