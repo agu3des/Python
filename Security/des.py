@@ -1,7 +1,13 @@
 # Python3 code for the above approach
+
 # Hexadecimal to binary conversion
-
-
+'''
+1. Conversões hexadecimais e binárias
+Função hex2bin(s)
+Converte uma string hexadecimal para binária:
+Um dicionário mapeia cada caractere hexadecimal (0-9, A-F) para seu equivalente binário de 4 bits.
+Para cada caractere da string hexadecimal s, concatena o binário correspondente na string bin.
+'''
 def hex2bin(s):
 	mp = {'0': "0000",
 		'1': "0001",
@@ -24,9 +30,14 @@ def hex2bin(s):
 		bin = bin + mp[s[i]]
 	return bin
 
+
 # Binary to hexadecimal conversion
-
-
+'''
+Função bin2hex(s)
+Converte uma string binária para hexadecimal:
+Divide a string binária em blocos de 4 bits e usa um dicionário para mapeá-los ao hexadecimal correspondente.
+Concatena o resultado em uma string hex.
+'''
 def bin2hex(s):
 	mp = {"0000": '0',
 		"0001": '1',
@@ -55,9 +66,13 @@ def bin2hex(s):
 
 	return hex
 
+
 # Binary to decimal conversion
-
-
+'''
+Função bin2dec(binary)
+Converte binário em decimal:
+Decompõe o número binário em dígitos, aplica a fórmula decimal+= bitx2**posicao, e acumula o resultado.
+'''
 def bin2dec(binary):
 
 	binary1 = binary
@@ -69,9 +84,13 @@ def bin2dec(binary):
 		i += 1
 	return decimal
 
+
 # Decimal to binary conversion
-
-
+'''
+Função dec2bin(num)
+Converte decimal em binário, garantindo que o resultado tenha comprimento múltiplo de 4:
+Usa bin() para conversão e adiciona zeros à esquerda, se necessário.
+'''
 def dec2bin(num):
 	res = bin(num).replace("0b", "")
 	if(len(res) % 4 != 0):
@@ -82,18 +101,27 @@ def dec2bin(num):
 			res = '0' + res
 	return res
 
+
 # Permute function to rearrange the bits
-
-
+'''
+2. Funções de manipulação de bits
+Função permute(k, arr, n)
+Permuta os bits de k conforme uma tabela de permutação arr:
+Para cada índice na tabela, adiciona o bit correspondente de k na nova string permutation.
+'''
 def permute(k, arr, n):
 	permutation = ""
 	for i in range(0, n):
 		permutation = permutation + k[arr[i] - 1]
 	return permutation
 
+
 # shifting the bits towards left by nth shifts
-
-
+'''
+Função shift_left(k, nth_shifts)
+Realiza deslocamento circular à esquerda em uma string k:
+Desloca os bits pela quantidade nth_shifts.
+'''
 def shift_left(k, nth_shifts):
 	s = ""
 	for i in range(nth_shifts):
@@ -104,9 +132,13 @@ def shift_left(k, nth_shifts):
 		s = ""
 	return k
 
+
 # calculating xow of two strings of binary number a and b
-
-
+'''
+Função xor(a, b)
+Calcula o XOR bit a bit entre duas strings binárias a e b:
+Para cada bit, compara se são iguais (0) ou diferentes (1).
+'''
 def xor(a, b):
 	ans = ""
 	for i in range(len(a)):
@@ -117,6 +149,11 @@ def xor(a, b):
 	return ans
 
 
+'''
+3. Tabelas do DES
+As tabelas definidas (ex.: initial_perm, exp_d, etc.) especificam como os bits devem ser organizados durante o processo de criptografia. 
+Elas fazem parte do padrão DES.
+'''
 # Table of Position of 64 bits at initial level: Initial Permutation Table
 initial_perm = [58, 50, 42, 34, 26, 18, 10, 2,
 				60, 52, 44, 36, 28, 20, 12, 4,
@@ -126,7 +163,6 @@ initial_perm = [58, 50, 42, 34, 26, 18, 10, 2,
 				59, 51, 43, 35, 27, 19, 11, 3,
 				61, 53, 45, 37, 29, 21, 13, 5,
 				63, 55, 47, 39, 31, 23, 15, 7]
-
 # Expansion D-box Table
 exp_d = [32, 1, 2, 3, 4, 5, 4, 5,
 		6, 7, 8, 9, 8, 9, 10, 11,
@@ -134,7 +170,6 @@ exp_d = [32, 1, 2, 3, 4, 5, 4, 5,
 		16, 17, 18, 19, 20, 21, 20, 21,
 		22, 23, 24, 25, 24, 25, 26, 27,
 		28, 29, 28, 29, 30, 31, 32, 1]
-
 # Straight Permutation Table
 per = [16, 7, 20, 21,
 	29, 12, 28, 17,
@@ -144,7 +179,6 @@ per = [16, 7, 20, 21,
 	32, 27, 3, 9,
 	19, 13, 30, 6,
 	22, 11, 4, 25]
-
 # S-box Table
 sbox = [[[14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7],
 		[0, 15, 7, 4, 14, 2, 13, 1, 10, 6, 12, 11, 9, 5, 3, 8],
@@ -185,7 +219,6 @@ sbox = [[[14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7],
 		[1, 15, 13, 8, 10, 3, 7, 4, 12, 5, 6, 11, 0, 14, 9, 2],
 		[7, 11, 4, 1, 9, 12, 14, 2, 0, 6, 10, 13, 15, 3, 5, 8],
 		[2, 1, 14, 7, 4, 10, 8, 13, 15, 12, 9, 0, 3, 5, 6, 11]]]
-
 # Final Permutation Table
 final_perm = [40, 8, 48, 16, 56, 24, 64, 32,
 			39, 7, 47, 15, 55, 23, 63, 31,
@@ -197,13 +230,33 @@ final_perm = [40, 8, 48, 16, 56, 24, 64, 32,
 			33, 1, 41, 9, 49, 17, 57, 25]
 
 
+'''
+4. Função de Criptografia
+Processo Geral
+'''
 def encrypt(pt, rkb, rk):
 	pt = hex2bin(pt)
+	#Conversão inicial: Converte o texto claro (plaintext) de hexadecimal para binário usando hex2bin(pt).
+
+	print(bin2hex(pt))
 
 	# Initial Permutation
 	pt = permute(pt, initial_perm, 64)
+	#Permutação inicial: Usa a tabela initial_perm para rearranjar os bits.
+
 	print("After initial permutation", bin2hex(pt))
 
+	'''
+	Divisão:
+	Divide o texto permutado em duas metades: left (32 bits) e right (32 bits).
+	
+	16 Rodadas de Criptografia:
+	Expande right de 32 para 48 bits usando exp_d.
+	Aplica XOR entre right_expanded e a chave da rodada.
+	Substitui valores com as tabelas S-box.
+	Permuta bits com a tabela per.
+	Aplica XOR com left e troca os lados (exceto na última rodada).
+	'''
 	# Splitting
 	left = pt[0:32]
 	right = pt[32:64]
