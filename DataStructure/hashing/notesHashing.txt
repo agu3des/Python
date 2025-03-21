@@ -244,3 +244,49 @@ Desvantagem:
 → Perde espaço
 → Uso de espaço extra
 → Busca sequencial para se proceder a busca
+
+
+-------------------------------------------------
+HASHING
+Mapeamento (chave, valor)
+→ Valor é algo associado a chave
+→ Para retornar um inteiro eu teria que fazer alguma operação que retornasse um número
+→ Tem que gerar um índice dentro da tabela
+→ Quando irá dar colisão:
+→ Quanto mais simples melhor
+h(K) = K % m
+k é a key
+m é o len da tabela
+→esse k tem que chegar inteiro
+→Não tem duplicidade, pois ela automaticamente substitui o valor existente
+→O array deve ter um tamanho fixo
+→Todos são inicializados com None
+
+
+REHASHING
+Tô ocupado, vai para o da frente
+→Linear: pulo pequeno
+rh(i) = (i+1) % m
+→Quadrática: pulo grande
+No primeiro o ‘i’ é um número  inteiro que começa em 1, nas seguintes, a cada rehasing ele aumenta exponencialmente
+rh(K) = (h(K) +i²)%m
+→Espalhamento duplo: mesmo que der errado, vai ser diferente por conta da relação k % numPrimo
+h1 = K%m
+h2 = numPrimo - (K%numPrimo)
+numPrimo < m (nossa escolha)
+rh(K) = (h1(K)+i*h2(K)) %m
+
+
+ENDEREÇAMENTO ABERTO
+→ Vantagem:
+A busca é realizada diretamente ao bucket correspondente dentro da própria tabela hash
+Ao invés de acessarmos ponteiros extras, calculamos a sequência de posições a serem percorridas
+Aplicações com restrição de memória podem se beneficiar com esse tipo de implementação
+→ Desvantagem:
+Maior esforço de processamento para cálculo das posições disponíveis em caso de colisão (rehashing)
+Em implementações de tabelas de dispersão de tamanho fixo, podemos lidar com a situação em que a hash table está cheia
+
+ENCADEAMENTO
+→ Se a posição do hash modular não tiver nenhuma, vai se inserir nela uma estrutura encadeada, que faça sentido, ex: listas
+→ Cada índice do list eu crio outro list dentro dele
+→ Pode-se fazer o instanciamento preguiçoso: eu tô por aqui, mas só vou agir se me chamar
