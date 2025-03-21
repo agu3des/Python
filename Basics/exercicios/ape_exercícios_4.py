@@ -19,11 +19,11 @@ elif a == 3:
 elif a == 4:
   result = 'Quarta-feira'
 elif a == 5:
-  result 'Quinta-feira'
+  result = 'Quinta-feira'
 elif a == 6:
   result = 'Sexta-feira'
 else:
-  result == 'Sábado'
+  result = 'Sábado'
 
 a = int(input('Digite um número de 1 a 7: '))
 
@@ -40,7 +40,7 @@ elif a == 5:
 elif a == 6:
   result = 'Sexta-feira'
 else:
-  result == 'Sábado'
+  result = 'Sábado'
 if a == 1 or a == 7:
    result2 = 'fim de semana'
 else:
